@@ -2,11 +2,11 @@
 
 namespace TdSoftRepositories.API.Controllers
 {
-    [Route("repos/find")]
+    [Route("repos/")]
     [ApiController]
     public class RepositoryController : Controller
     {
-        [HttpGet]
+        [HttpGet("find")]
         public IActionResult Get(string nome, int pagina, int por_pagina)
         {
             return Ok("Hello World");
