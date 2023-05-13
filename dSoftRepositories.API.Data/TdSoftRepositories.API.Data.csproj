@@ -6,4 +6,16 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Context\" />
+    <None Remove="Migration\" />
+    <None Remove="Repositories\" />
+    <None Remove="UnitOfWork\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Context\" />
+    <Folder Include="Migration\" />
+    <Folder Include="Repositories\" />
+    <Folder Include="UnitOfWork\" />
+  </ItemGroup>
 </Project>
