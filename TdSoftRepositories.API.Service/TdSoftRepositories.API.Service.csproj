@@ -12,6 +12,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Generics\" />
-    <Folder Include="Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\dSoftRepositories.API.Data\TdSoftRepositories.API.Data.csproj" />
+    <ProjectReference Include="..\TdSoftRepositories.API.Domain\TdSoftRepositories.API.Domain.csproj" />
   </ItemGroup>
 </Project>

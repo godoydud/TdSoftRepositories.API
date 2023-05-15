@@ -7,15 +7,27 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Context\**" />
+    <Compile Remove="Migration\**" />
+    <Compile Remove="UnitOfWork\**" />
+    <EmbeddedResource Remove="Context\**" />
+    <EmbeddedResource Remove="Migration\**" />
+    <EmbeddedResource Remove="UnitOfWork\**" />
+    <None Remove="Context\**" />
+    <None Remove="Migration\**" />
+    <None Remove="UnitOfWork\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Context\" />
     <None Remove="Migration\" />
     <None Remove="Repositories\" />
     <None Remove="UnitOfWork\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Context\" />
-    <Folder Include="Migration\" />
-    <Folder Include="Repositories\" />
-    <Folder Include="UnitOfWork\" />
+    <ProjectReference Include="..\TdSoftRepositories.API.Domain\TdSoftRepositories.API.Domain.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="repositories\" />
   </ItemGroup>
 </Project>

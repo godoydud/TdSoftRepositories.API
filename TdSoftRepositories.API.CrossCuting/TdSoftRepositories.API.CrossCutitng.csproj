@@ -9,7 +9,13 @@
   <ItemGroup>
     <None Remove="DependencyInjection\" />
   </ItemGroup>
+
   <ItemGroup>
-    <Folder Include="DependencyInjection\" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\dSoftRepositories.API.Data\TdSoftRepositories.API.Data.csproj" />
+    <ProjectReference Include="..\TdSoftRepositories.API.Service\TdSoftRepositories.API.Service.csproj" />
   </ItemGroup>
 </Project>
