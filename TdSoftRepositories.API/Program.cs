@@ -1,6 +1,10 @@
+using Microsoft.OpenApi.Models;
+using System.Reflection;
+using TdSoftRepositories.API.CrossCutitng.DependencyInjection;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+ConfigureService.Configure(builder.Services);
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -12,9 +16,7 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    // Definir endpoint swagger para arquivo em swagger/swagger-doc.yaml para que a documenta��o de swagger possa ser acessada em https://localhost:<port>/swagger/swagger-doc.yaml (https://localhost:<port>/swagger/swagger-doc.yaml)
     app.UseSwagger();
-    // Definir endpoint swagger para arquivo em swagger/swagger-doc.yaml para que a documenta��o de swagger possa ser acessada em https://localhost:<port>/swagger/swagger-doc.yaml (https://localhost:<port>/swagger/swagger-doc.yaml)
     app.UseSwaggerUI();
 }
 
