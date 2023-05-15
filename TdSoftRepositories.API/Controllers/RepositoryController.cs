@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
 using TdSoftRepositories.API.Domain.Entities;
 
 namespace TdSoftRepositories.API.Controllers
@@ -8,19 +9,23 @@ namespace TdSoftRepositories.API.Controllers
     public class RepositoryController : Controller
     {
         /// <summary>
-        /// 
+        /// Permite a busca por repositorios cadastrados
         /// </summary>
-        /// <param name="nome"></param>
-        /// <param name="pagina"></param>
-        /// <param name="por_pagina"></param>
-        /// <returns>Todos repositórios</returns>
-        /// <response code="200">Retorna todos os repositórios</response>
+        /// <description>
+        /// Endpoints relacionados à repositórios
+        /// </description>
+        /// <response code="200">busca realizada com sucesso</response>
+        /// <response code="400">ocorreu um erro na busca</response>
         [HttpGet("find")]
-        public List<Repository> GetAllRepos(string nome, int pagina, int por_pagina)
+        public List<Repository> GetAllRepos([Required(ErrorMessage = "Nome é obrigatório")]string nome, int pagina, int por_pagina)
         {
             return new List<Repository>();
         }
 
+        /// <summary>
+        /// obtém dados de um repositório específico
+        /// </summary>
+        /// <response code="200">repositório encontrado com sucesso</response>
         [HttpGet("{repoId}")]
         public Repository GetReposById(string repoId)
         {
