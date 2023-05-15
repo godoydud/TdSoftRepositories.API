@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using TdSoftRepositories.API.Domain.Entities;
 
 namespace TdSoftRepositories.API.Controllers
 {
@@ -6,16 +7,24 @@ namespace TdSoftRepositories.API.Controllers
     [ApiController]
     public class RepositoryController : Controller
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="nome"></param>
+        /// <param name="pagina"></param>
+        /// <param name="por_pagina"></param>
+        /// <returns>Todos repositórios</returns>
+        /// <response code="200">Retorna todos os repositórios</response>
         [HttpGet("find")]
-        public IActionResult GetAllRepos(string nome, int pagina, int por_pagina)
+        public List<Repository> GetAllRepos(string nome, int pagina, int por_pagina)
         {
-            return Ok("Hello World");
+            return new List<Repository>();
         }
 
         [HttpGet("{repoId}")]
-        public IActionResult GetReposById(string repoId)
+        public Repository GetReposById(string repoId)
         {
-            return Ok("Hello World");
+            return new Repository { Id = repoId };
         }
     }
 }
