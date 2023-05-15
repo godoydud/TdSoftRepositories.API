@@ -58,6 +58,69 @@
         public bool UsesCustomOpenGraphImage { get; set; }
         public int VulnerabilityAlerts { get; set; }
         public int Watchers { get; set; }
+
+        public Repository() { }
+
+        public Repository(Repository repository)
+        {
+            Id = repository.Id;
+            AssignableUsers = repository.AssignableUsers;
+            CodeOfConduct = repository.CodeOfConduct;
+            CreatedAt = repository.CreatedAt;
+            DatabaseId = repository.DatabaseId;
+            DefaultBranch = repository.DefaultBranch;
+            DeleteBranchOnMerge = repository.DeleteBranchOnMerge;
+            Description = repository.Description;
+            DiskUsage = repository.DiskUsage;
+            Forks = repository.Forks;
+            FundingLinks = repository.FundingLinks;
+            HasIssuesEnabled = repository.HasIssuesEnabled;
+            HasProjectsEnabled = repository.HasProjectsEnabled;
+            HasWikiEnabled = repository.HasWikiEnabled;
+            HomepageUrl = repository.HomepageUrl;
+            IsArchived = repository.IsArchived;
+            IsBlankIssuesEnabled = repository.IsBlankIssuesEnabled;
+            IsDisabled = repository.IsDisabled;
+            IsEmpty = repository.IsEmpty;
+            IsFork = repository.IsFork;
+            IsInOrganization = repository.IsInOrganization;
+            IsLocked = repository.IsLocked;
+            IsMirror = repository.IsMirror;
+            IsPrivate = repository.IsPrivate;
+            IsSecurityPolicyEnabled = repository.IsSecurityPolicyEnabled;
+            IsTemplate = repository.IsTemplate;
+            IsUserConfigurationRepository = repository.IsUserConfigurationRepository;
+            Issues = repository.Issues;
+            Labels = repository.Labels;
+            Languages = repository.Languages;
+            LicenseInfo = repository.LicenseInfo;
+            LockReason = repository.LockReason;
+            MentionableUsers = repository.MentionableUsers;
+            MergeCommitAllowed = repository.MergeCommitAllowed;
+            Milestones = repository.Milestones;
+            MirrorUrl = repository.MirrorUrl;
+            Name = repository.Name;
+            NameWithOwner = repository.NameWithOwner;
+            OpenGraphImageUrl = repository.OpenGraphImageUrl;
+            Owner = repository.Owner;
+            Parent = repository.Parent;
+            PrimaryLanguage = repository.PrimaryLanguage;
+            PushedAt = repository.PushedAt;
+            PullRequests = repository.PullRequests;
+            RebaseMergeAllowed = repository.RebaseMergeAllowed;
+            Releases = repository.Releases;
+            RepositoryTopics = repository.RepositoryTopics;
+            SquashMergeAllowed = repository.SquashMergeAllowed;
+            Stargazers = repository.Stargazers;
+            Tags = repository.Tags;
+            TemplateRepository = repository.TemplateRepository;
+            UpdatedAt = repository.UpdatedAt;
+            Url = repository.Url;
+            UsesCustomOpenGraphImage = repository.UsesCustomOpenGraphImage;
+            VulnerabilityAlerts = repository.VulnerabilityAlerts;
+            Watchers = repository.Watchers;
+
     }
+}
 }
 
