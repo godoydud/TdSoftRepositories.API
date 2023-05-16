@@ -18,7 +18,4 @@ namespace TdSoftRepositories.API.Domain.Entities
             Avatar_url = actor.Avatar_url;
         }
     }
-   
-
- }
-
+}
