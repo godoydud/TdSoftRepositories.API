@@ -15,7 +15,7 @@ namespace TdSoftRepositories.API.Data.Repositories
         public IQueryable GetAll() =>
             CoreContext.Set<Repository>().AsQueryable();
 
-        public Repository GetById(Guid id) =>
+        public Repository GetById(string id) =>
             CoreContext.Set<Repository>().Find(id);
     }
 }
