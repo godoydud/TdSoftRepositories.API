@@ -14,6 +14,11 @@
     <Folder Include="Generics\" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Npgsql" Version="7.0.4" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.4" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL.Design" Version="1.1.0" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\dSoftRepositories.API.Data\TdSoftRepositories.API.Data.csproj" />
     <ProjectReference Include="..\TdSoftRepositories.API.Domain\TdSoftRepositories.API.Domain.csproj" />
   </ItemGroup>

@@ -7,13 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Context\**" />
     <Compile Remove="Migration\**" />
     <Compile Remove="UnitOfWork\**" />
-    <EmbeddedResource Remove="Context\**" />
     <EmbeddedResource Remove="Migration\**" />
     <EmbeddedResource Remove="UnitOfWork\**" />
-    <None Remove="Context\**" />
     <None Remove="Migration\**" />
     <None Remove="UnitOfWork\**" />
   </ItemGroup>
@@ -28,6 +25,9 @@
     <ProjectReference Include="..\TdSoftRepositories.API.Domain\TdSoftRepositories.API.Domain.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="repositories\" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.5" />
+    <PackageReference Include="Npgsql" Version="7.0.4" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.4" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL.Design" Version="1.1.0" />
   </ItemGroup>
 </Project>
