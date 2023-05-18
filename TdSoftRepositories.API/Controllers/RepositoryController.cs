@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
+using TdSoftRepositories.API.Data.Repositories;
 using TdSoftRepositories.API.Domain.Entities;
 
 namespace TdSoftRepositories.API.Controllers
@@ -8,6 +9,12 @@ namespace TdSoftRepositories.API.Controllers
     [ApiController]
     public class RepositoryController : Controller
     {
+        private readonly RepositoryRepository _repositoryRepository;
+        public RepositoryController(RepositoryRepository repositoryRepository)
+        {
+            _repositoryRepository = repositoryRepository;
+        }
+
         /// <summary>
         /// Permite a busca por repositorios cadastrados
         /// </summary>
@@ -29,7 +36,7 @@ namespace TdSoftRepositories.API.Controllers
         [HttpGet("{repoId}")]
         public Repository GetReposById(string repoId)
         {
-            return new Repository { Id = repoId };
+            return _repositoryRepository.GetById(repoId);
         }
     }
 }
