@@ -1,12 +1,18 @@
+using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using TdSoftRepositories.API.CrossCutitng.DependencyInjection;
+using TdSoftRepositories.API.Data.Context;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddEntityFrameworkNpgsql()
+    .AddDbContext<CoreContext>(options =>
+    options.UseNpgsql("Server=localhost;Database=TdSoftRepositoriesBd;Port=5432;User Id=postgres;Password=admin;Ssl Mode=VerifyFull;"));
+
 ConfigureService.Configure(builder.Services);
+ConfigureRepositories.Configure(builder.Services, builder.Configuration);
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
