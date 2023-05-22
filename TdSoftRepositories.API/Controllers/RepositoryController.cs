@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
-using TdSoftRepositories.API.Data.Repositories;
-using TdSoftRepositories.API.Domain.Entities;
+using TdSoftRepositories.API.Domain.DTOs;
+using TdSoftRepositories.API.Service.Services;
 
 namespace TdSoftRepositories.API.Controllers
 {
@@ -9,10 +9,11 @@ namespace TdSoftRepositories.API.Controllers
     [ApiController]
     public class RepositoryController : Controller
     {
-        private readonly RepositoryRepository _repositoryRepository;
-        public RepositoryController(RepositoryRepository repositoryRepository)
+        private RepositoryService _repositoryService;
+
+        public RepositoryController(RepositoryService repositoryService)
         {
-            _repositoryRepository = repositoryRepository;
+            _repositoryService = repositoryService;
         }
 
         /// <summary>
@@ -24,9 +25,12 @@ namespace TdSoftRepositories.API.Controllers
         /// <response code="200">busca realizada com sucesso</response>
         /// <response code="400">ocorreu um erro na busca</response>
         [HttpGet("find")]
-        public List<Repository> GetAllRepos([Required(ErrorMessage = "Nome é obrigatório")]string nome, int pagina, int por_pagina)
+        public ResponseDTO<List<repositoriesDTO>> GetPaginatedRepos(
+            [Required(ErrorMessage = "Nome é obrigatório")][FromQuery] string nome,
+            [FromQuery] int por_pagina = 10,
+            [FromQuery] int pagina = 1)
         {
-            return new List<Repository>();
+            return _repositoryService.GetAllRepos(nome, pagina, por_pagina);
         }
 
         /// <summary>
@@ -34,9 +38,9 @@ namespace TdSoftRepositories.API.Controllers
         /// </summary>
         /// <response code="200">repositório encontrado com sucesso</response>
         [HttpGet("{repoId}")]
-        public Repository GetReposById(string repoId)
+        public ResponseDTO<repositoriesResponseDTO> GetReposById(string repoId)
         {
-            return _repositoryRepository.GetById(repoId);
+            return _repositoryService.GetRepositoryById(repoId);
         }
     }
 }
