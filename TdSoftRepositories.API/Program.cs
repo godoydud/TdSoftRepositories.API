@@ -7,10 +7,12 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddEntityFrameworkNpgsql()
     .AddDbContext<CoreContext>(options =>
-    options.UseNpgsql("Server=localhost;Database=TdSoftRepositoriesBd;Port=5432;User Id=postgres;Password=admin;Ssl Mode=VerifyFull;"));
+    options.UseNpgsql("Server=localhost;Database=TdSoftRepositoriesBd;Port=5432;User Id=postgres;Password=admin;Ssl Mode=Disable;"));
 
 ConfigureService.Configure(builder.Services);
 ConfigureRepositories.Configure(builder.Services, builder.Configuration);
+ConfigureMappers.Configure(builder.Services);
+
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
@@ -19,7 +21,7 @@ builder.Services.AddSwaggerGen(c =>
     c.SwaggerDoc("v1", new OpenApiInfo
     {
         Title = "TdSoftRepositories.API",
-        Description = "Descrição da nossa API",
+        Description = "Descricao da nossa API",
         Version = "v1",
         Contact = new OpenApiContact
         {
