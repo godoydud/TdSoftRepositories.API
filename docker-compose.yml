@@ -9,4 +9,3 @@ services:
       - "5400:80"
     volumes: 
       - .:/app/
-    network_mode: "host"
