@@ -15,6 +15,7 @@ namespace TdSoftRepositories.API.CrossCutitng.DependencyInjection
                 );
 
             services.AddScoped(typeof(RepositoryRepository));
+            services.AddScoped(typeof(ActorsRepository));
         }
     }
 }
