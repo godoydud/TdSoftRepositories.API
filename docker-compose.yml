@@ -1,0 +1,12 @@
+services:
+  tdsoftrepositoriesapi:
+    image: tdsoft-repositoriesapi
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    build:
+      context: .
+    ports:
+      - "5400:80"
+    volumes: 
+      - .:/app/
+    network_mode: "host"
