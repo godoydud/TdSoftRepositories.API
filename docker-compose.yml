@@ -6,6 +6,6 @@ services:
     build:
       context: .
     ports:
-      - "5400:80"
+      - "5400:5400"
     volumes: 
       - .:/app/
