@@ -5,7 +5,8 @@ namespace TdSoftRepositories.API.Data.Context
 {
     public class CoreContext : DbContext
     {
-        public DbSet<Repository>? Repository { get; set; }
+        public DbSet<repositories>? repositories { get; set; }
+        public DbSet<actors>? actors { get; set; }
 
         public CoreContext(DbContextOptions<CoreContext> options) : base(options) { }
 
