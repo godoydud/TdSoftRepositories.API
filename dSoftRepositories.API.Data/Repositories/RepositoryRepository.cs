@@ -12,10 +12,10 @@ namespace TdSoftRepositories.API.Data.Repositories
             CoreContext = context;
         }
 
-        public IQueryable GetAll() =>
-            CoreContext.Set<Repository>().AsQueryable();
+        public IQueryable<repositories> GetAll() =>
+            CoreContext.Set<repositories>().AsQueryable();
 
-        public Repository GetById(string id) =>
-            CoreContext.Set<Repository>().Find(id);
+        public repositories GetById(string id) =>
+            CoreContext.Set<repositories>().Where(x => x.id == id).FirstOrDefault();
     }
 }
